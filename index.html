@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		table
+		{
+			border: 1px solid;
+		}
+		th
+		{
+			border: 1px solid;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<label>Electricity Bill</label>
+	<input type="number" id="demo">
+	<button onclick="show()">Submit</button><br><br>
+	<table id="gayu">
+		<thead>
+            <tr>
+            	<th>No</th>
+                <th>Units</th>
+                <th>Per Unit</th>
+                <th>Tax 20%</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+            	<th id="one"></th>
+            	<th id="two"></th>
+            	<th id="three"></th>
+            	<th id="four"></th>
+            	<th id="five"></th>
+            </tr>
+        </thead>
+	</table>
+
+	<script>
+		function show()
+		{
+			let res=document.getElementById("demo").value;
+
+			if(res<=100)
+			{	
+			    document.getElementById("one").innerHTML="1";
+			    document.getElementById("two").innerHTML="-";
+			    document.getElementById("three").innerHTML="-";
+			    document.getElementById("four").innerHTML="-";	
+				document.getElementById("five").innerHTML="No charge";
+			}
+			else if(res<=200)
+		    {
+		    	document.getElementById("one").innerHTML="1";
+		    	document.getElementById("two").innerHTML=res;
+		    	document.getElementById("three").innerHTML="2.5";
+		    	document.getElementById("four").innerHTML=res*2.5;
+		    	document.getElementById("five").innerHTML=((res*2.5/20)+(res*2.5));
+		    }
+		    else if(res<=300)
+		    {
+		    	document.getElementById("one").innerHTML="1";
+		    	document.getElementById("two").innerHTML=res;
+		    	document.getElementById("three").innerHTML="3.5";
+		    	document.getElementById("four").innerHTML=res*3.5;
+		    	document.getElementById("five").innerHTML=((res*3.5/20)+(res*3.5));
+		    }
+		    else if(res<=400)
+		    {
+		    	document.getElementById("one").innerHTML="1";
+		    	document.getElementById("two").innerHTML=res;
+		    	document.getElementById("three").innerHTML="4.5";
+		    	document.getElementById("four").innerHTML=res*4.5;
+		    	document.getElementById("five").innerHTML=((res*4.5/20)+(res*4.5));
+		    }
+		    else if(res<=500)
+		    {
+		    	document.getElementById("one").innerHTML="1";
+		    	document.getElementById("two").innerHTML=res;
+		    	document.getElementById("three").innerHTML="5.5";
+		    	document.getElementById("four").innerHTML=res*5.5;
+		    	document.getElementById("five").innerHTML=((res*5.5/20)+(res*5.5));
+		    }
+		    else
+		    {
+		    	document.getElementById("one").innerHTML="1";
+		    	document.getElementById("two").innerHTML="-";
+		    	document.getElementById("three").innerHTML="-";
+		    	document.getElementById("four").innerHTML="-";
+		    	document.getElementById("five").innerHTML="contact EB office";
+		    }
+		}
+	</script>
+</body>
+</html>
